@@ -6,9 +6,9 @@ Note you will still need to forward and open ports 2456, 2457, and 2458 (UDP pro
 
 If you find this repo useful, I'd love to hear back in a note how you're using it.  If you use this repo to build on your own work, please provide a reference back to this repo's URL.
 
-Built images are provided on Docker Hub: [sethmachineio/valheim-server:latest](https://hub.docker.com/r/sethmachineio/valheim-server)
+Built images are provided on Docker Hub: [p0kr/valheim-server:latest](https://hub.docker.com/r/p0kr/valheim-server)
 
-I also have written a complete guide here that covers how to set up your own dedicated server at home: [Valheim Dedicated Server at Home Guide](https://sethmachine.gitlab.io/2021/02/11/host-valheim-with-docker/).
+The original author also has written a complete guide here that covers how to set up your own dedicated server at home: [Valheim Dedicated Server at Home Guide](https://sethmachine.gitlab.io/2021/02/11/host-valheim-with-docker/).
 
 ## Usage
 
@@ -76,7 +76,7 @@ docker run --name=valheim -d \
 --env VALHEIM_SERVER_NAME="sethmachine'sServer" \
 --env VALHEIM_WORLD_NAME="AWholeNewWorld" \
 --env VALHEIM_PASSWORD="HardToGuessPassword" \
-sethmachineio/valheim-server
+p0kr/valheim-server
 ```
 
 After running for the 1st time, the banlist, permitted list, and admin list will be created if they do not already exist in the host's directory.  There will also be a world specific log file.
@@ -134,13 +134,13 @@ sethmachine valheim-server-docker % tail -f /home/sethmachine/valheim-data/AWhol
 Clone the repository and cd into the repo, then run `docker build`:
 
 ```bash
-docker build -t sethmachineio/valheim-server .
+docker build -t p0kr/valheim-server .
 ```
 
 If you build the image locally and then Valheim updates its server, rebuilding the image won't update to the new server, as Docker will still use the cache as it has no idea Valheim updated the server.  To force re-downloading the latest server, use the `--no-cache` option when building the Docker image, e.g.:
 
 ```bash
-docker build -t sethmachineio/valheim-server --no-cache .
+docker build -t p0kr/valheim-server --no-cache .
 ```
 
 

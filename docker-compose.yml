@@ -1,7 +1,7 @@
 version: "3"
 services:
   valheim:
-    image: sethmachineio/valheim-server
+    image: p0kr/valheim-server
     user: "1000:1000"
     ports:
       - 2456:2456/udp
